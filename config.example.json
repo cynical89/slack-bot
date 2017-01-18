@@ -1,0 +1,6 @@
+{
+    "bot": {
+        "name": "Slack-Bot",
+        "token": "YOUR KEY HERE"
+    }
+}
