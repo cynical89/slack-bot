@@ -1,6 +1,9 @@
 {
     "bot": {
         "name": "Slack-Bot",
-        "token": "YOUR KEY HERE"
+        "token": "YOUR KEY HERE",
+				"weather": {
+					"key": "YOUR KEY HERE"
+				}
     }
 }

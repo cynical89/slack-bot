@@ -1,0 +1,7 @@
+{
+	"commands": [
+		"*!h* / *.h* / *!help* / *.help* - displays this message",
+		"*!we* / *.we* _{{zipcode or city or country}}_ - displays the current weather",
+		"*!weather* / *.weather* _{{zipcode or city or country}}_ - displays the current weather"
+	]
+}

@@ -4,7 +4,7 @@
   "description": "a bot for slack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cynical89/slack-bot#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "co": "^4.6.0",
     "slackbots": "^1.0.2"
   }
