@@ -20,7 +20,7 @@ bot.on("start", () => {
 		users = users.members;
 	});
 	console.log(`${config.bot.name} is listening...!`);
-	// bot.postMessageToChannel("bot-testing", `${config.bot.name} has awoken!`, params);
+	bot.postMessageToChannel("bot-testing", `${config.bot.name} has awoken!`, params);
 });
 
 bot.on("message", (data) => {
