@@ -2,9 +2,9 @@
 a bot for slack!
 
 ### Requirements
-[NodeJs](https://nodejs.org/en/)
-[Slack bot token](https://api.slack.com/services/new/bot)
-[Wunderground Api Token](https://www.wunderground.com/weather/api)
+* [NodeJs](https://nodejs.org/en/)
+* [Slack bot token](https://api.slack.com/services/new/bot)
+* [Wunderground Api Token](https://www.wunderground.com/weather/api)
 
 
 ### Instructions
@@ -15,8 +15,8 @@ a bot for slack!
 
 * Install dependencies `npm install`
 
-* Make config and add config settings
-inside the directory there is a file name `config.example.json`. copy this file and rename it `config.json`. Open up this file and add your slack bot token and wunderground api token.
+* Make config and add config settings. 
+Inside the directory there is a file named `config.example.json`. copy this file and rename it `config.json`. Open up this file and add your slack bot token and wunderground api token.
 
 * Start it up `npm start`
 
