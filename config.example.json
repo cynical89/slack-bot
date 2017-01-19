@@ -5,5 +5,9 @@
 				"weather": {
 					"key": "YOUR KEY HERE"
 				}
-    }
+    },
+		"duckHunt": {
+			"minTime": 480000,
+			"maxTime": 1200000
+		}
 }

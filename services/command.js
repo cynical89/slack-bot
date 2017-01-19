@@ -1,6 +1,7 @@
 const axios = require("axios");
 const config = require("../config.json");
 const helpDoc = require("../helpers/help.json");
+const duckHunt = require("../models/duckhunt");
 
 module.exports = {
 	action: (cmd) => {
@@ -26,17 +27,25 @@ const commands = {
 	weather: function* weather(data) {
 		const result = yield getWeather(data);
 		return result;
+	},
+	startDuckHunt: function* startDuckHunt() {
+			const game = duckHunt.newGame();
+			return game;
 	}
 }
 
 function* getWeather(data) {
 		let location = yield axios.get(`http://api.wunderground.com/api/${config.bot.weather.key}/geolookup/q/${data}.json`);
-		location = `${location.data.location.city}, ${location.data.location.country}`;
+		location = location.data.location;
+		location = `${location.city}, ${location.state}, ${location.country}`;
 
 		let result = yield axios.get(`http://api.wunderground.com/api/${config.bot.weather.key}/forecast/q/${data}.json`);
 		result = result.data.forecast.simpleforecast.forecastday[0];
 
-		return `Weather for ${location} - ${result.date.month}/${result.date.day}/${result.date.year}: High (${result.high.fahrenheit}F/${result.high.celsius}C) Low (${result.low.fahrenheit}F/${result.low.celsius}C) - Conditions: ${result.conditions}`;
+		const date = `${result.date.month}/${result.date.day}/${result.date.year}`
+		const temps = `High (${result.high.fahrenheit}F/${result.high.celsius}C) Low (${result.low.fahrenheit}F/${result.low.celsius}C)`
+
+		return `Weather for ${location} - ${date} : ${temps} - Conditions: ${result.conditions}`;
 }
 
 function getHelp() {

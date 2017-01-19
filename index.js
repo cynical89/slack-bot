@@ -2,6 +2,7 @@ const Slackbot = require("slackbots");
 const co = require("co");
 const config = require("./config.json");
 const main = require("./controllers/main");
+const duckHunt = require("./controllers/duckHunt");
 
 const bot = new Slackbot({
 	token: config.bot.token,
@@ -20,7 +21,7 @@ bot.on("start", () => {
 		users = users.members;
 	});
 	console.log(`${config.bot.name} is listening...!`);
-	bot.postMessageToChannel("bot-testing", `${config.bot.name} has awoken!`, params);
+	// bot.postMessageToChannel("bot-testing", `${config.bot.name} has awoken!`, params);
 });
 
 bot.on("message", (data) => {
@@ -28,7 +29,17 @@ bot.on("message", (data) => {
 		const result = yield main.handler(data, users);
 		if (result === undefined)
 			return;
-
-		bot.postMessageToChannel("bot-testing", result, params);
+		if (result.isGame) {
+			duckHunt.DuckHunt();
+		} else {
+			bot.postMessageToChannel("bot-testing", result, params);
+		}
 		});
 });
+
+bot.on("close", (data) => {
+	console.log(data);
+});
+
+module.exports.bot = bot;
+module.exports.params = params;
