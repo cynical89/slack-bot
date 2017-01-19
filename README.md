@@ -30,3 +30,6 @@ displays the commands and how their useage
 
 * `!we` - `.we` - `!weather` - `.weather` - `also takes a paramer of zip code or city/state/country`
 displays the current weather information
+
+* `!startDuckHunt` - `.startDuckHunt`
+Starts the game of duckhunt (currently an inprogress feature)
