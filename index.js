@@ -38,8 +38,18 @@ bot.on("message", (data) => {
 });
 
 bot.on("close", (data) => {
-	console.log(data);
+	console.log(`closing: ${data}`);
 });
+
+bot.on("open", (data) => {
+	console.log(`opening: ${data}`);
+});
+
+bot.on("error", (data) => {
+	console.log(`error: ${data}`);
+});
+
+
 
 module.exports.bot = bot;
 module.exports.params = params;

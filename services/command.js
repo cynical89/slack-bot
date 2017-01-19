@@ -49,5 +49,6 @@ function* getWeather(data) {
 }
 
 function getHelp() {
-	return `${helpDoc.commands[0]}\n${helpDoc.commands[1]}\n${helpDoc.commands[2]}`;
+	return `${helpDoc.commands[0]}\n${helpDoc.commands[1]}\n${helpDoc.commands[2]}\n
+${helpDoc.commands[3]}`;
 }
